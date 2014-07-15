@@ -1,6 +1,6 @@
 # PictureTag
 
-TODO: Write a gem description
+Rails helper for `<picture>` tag integrated with [Picturefill](http://scottjehl.github.io/picturefill/).
 
 ## Installation
 
@@ -16,9 +16,36 @@ Or install it yourself as:
 
     $ gem install picture_tag
 
+To make it work you need to add this to your `application.js`:
+
+    //= require picture_tag
+
 ## Usage
 
-TODO: Write usage instructions here
+```Slim
+= picture_tag '/images/fallback.jpg', alt: 'Your smart alt attribute' do
+  = source_tag srcset: '/images/extralarge.jpg', media: '(min-width: 1000px)', size: '100vw'
+  = source_tag srcset: '/images/large.jpg', media: '(min-width: 800px)', size: '100vw'
+  = source_tag srcset: '/images/medium.jpg', size: '100vw'
+```
+
+produces
+
+```HTML
+<picture>
+  <source media="(min-width: 1000px)" size="100vw" srcset="/images/extralarge.jpg">
+  <source media="(min-width: 800px)" size="100vw" srcset="/images/large.jpg">
+  <source size="100vw" srcset="/images/medium.jpg">
+  <img alt="Your smart alt attribute" src="/images/extralarge.jpg">
+</picture>
+```
+
+Note that the mandatory `img` tag is automatically generated based on the arguments passed to the `picture_tag`.
+
+## More information
+
+* [Picturefill](http://scottjehl.github.io/picturefill/), the neat polyfill used by this gem
+* [Specification](http://picture.responsiveimages.org/) provided by [Responsive Images Community Group](http://responsiveimages.org)
 
 ## Contributing
 
