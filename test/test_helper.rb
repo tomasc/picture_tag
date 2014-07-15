@@ -6,3 +6,6 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require 'picture_tag'
 require 'rubygems'
+require 'coveralls'
+
+Coveralls.wear!
