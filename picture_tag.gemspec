@@ -18,8 +18,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "rails", ">= 4.1.0"
   spec.add_dependency "rails-assets-picturefill", ">= 2.0.0"
 
   spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "minitest"
   spec.add_development_dependency "rake"
 end
