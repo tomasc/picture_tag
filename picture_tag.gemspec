@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["tomas.celizna@gmail.com"]
   spec.summary       = %q{Rails helper for <picture> tag integrated with Picturefill.}
   spec.description   = %q{Rails helper for <picture> tag integrated with Picturefill.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/tomasc/picture_tag"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
