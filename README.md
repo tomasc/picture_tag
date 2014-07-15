@@ -1,6 +1,6 @@
 # PictureTag
 
-[![Gem Version](https://badge.fury.io/rb/picture_tag.svg)](http://badge.fury.io/rb/picture_tag) [![Coverage Status](https://img.shields.io/coveralls/tomasc/picture_tag.svg)](https://coveralls.io/r/tomasc/picture_tag)
+[![Build Status](https://travis-ci.org/tomasc/picture_tga.svg)](https://travis-ci.org/tomasc/picture_tag) [![Gem Version](https://badge.fury.io/rb/picture_tag.svg)](http://badge.fury.io/rb/picture_tag) [![Coverage Status](https://img.shields.io/coveralls/tomasc/picture_tag.svg)](https://coveralls.io/r/tomasc/picture_tag)
 
 Rails helper for `<picture>` tag integrated with [Picturefill](http://scottjehl.github.io/picturefill/).
 
