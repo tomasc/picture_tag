@@ -1,5 +1,7 @@
 # PictureTag
 
+[![Coverage Status](https://img.shields.io/coveralls/tomasc/picture_tag.svg)](https://coveralls.io/r/tomasc/picture_tag)
+
 Rails helper for `<picture>` tag integrated with [Picturefill](http://scottjehl.github.io/picturefill/).
 
 ## Installation
