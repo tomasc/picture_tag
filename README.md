@@ -26,18 +26,18 @@ To make it work you need to add this to your `application.js`:
 
 ```Slim
 = picture_tag '/images/fallback.jpg', alt: 'Your smart alt attribute' do
-  = source_tag srcset: '/images/extralarge.jpg', media: '(min-width: 1000px)', size: '100vw'
-  = source_tag srcset: '/images/large.jpg', media: '(min-width: 800px)', size: '100vw'
-  = source_tag srcset: '/images/medium.jpg', size: '100vw'
+  = source_tag srcset: '/images/extralarge.jpg', media: '(min-width: 1000px)', sizes: '100vw'
+  = source_tag srcset: '/images/large.jpg', media: '(min-width: 800px)', sizes: '100vw'
+  = source_tag srcset: '/images/medium.jpg', sizes: '100vw'
 ```
 
 produces
 
 ```HTML
 <picture>
-  <source srcset="/images/extralarge.jpg" media="(min-width: 1000px)" size="100vw">
-  <source srcset="/images/large.jpg" media="(min-width: 800px)" size="100vw" >
-  <source srcset="/images/medium.jpg" size="100vw">
+  <source srcset="/images/extralarge.jpg" media="(min-width: 1000px)" sizes="100vw">
+  <source srcset="/images/large.jpg" media="(min-width: 800px)" sizes="100vw" >
+  <source srcset="/images/medium.jpg" sizes="100vw">
   <img alt="Your smart alt attribute" src="/images/fallback.jpg">
 </picture>
 ```
