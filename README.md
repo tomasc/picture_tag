@@ -33,9 +33,9 @@ produces
 
 ```HTML
 <picture>
-  <source media="(min-width: 1000px)" size="100vw" srcset="/images/extralarge.jpg">
-  <source media="(min-width: 800px)" size="100vw" srcset="/images/large.jpg">
-  <source size="100vw" srcset="/images/medium.jpg">
+  <source srcset="/images/extralarge.jpg" media="(min-width: 1000px)" size="100vw">
+  <source srcset="/images/large.jpg" media="(min-width: 800px)" size="100vw" >
+  <source srcset="/images/medium.jpg" size="100vw">
   <img alt="Your smart alt attribute" src="/images/fallback.jpg">
 </picture>
 ```
