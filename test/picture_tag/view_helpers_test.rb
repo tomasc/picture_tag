@@ -21,6 +21,8 @@ module PictureTag
       let(:src) { 'src' }
       let(:alt) { 'alt' }
       let(:content) { 'content' }
+      let(:ie9_start) { "<!--[if IE 9]><video style='display: none;'><![endif]-->" }
+      let(:ie9_end) { "<!--[if IE 9]></video><![endif]-->" }
 
       it 'returns picture tag' do
         picture_tag(src, alt: alt) { content }.must_match Regexp.new("\\A<picture>.*?</picture>\\z")
@@ -40,6 +42,14 @@ module PictureTag
 
       it 'passes options to the image tag' do
         picture_tag(src, alt: alt) { content }.must_match Regexp.new("<img.*?alt=\"#{alt}\".*?/>")
+      end
+
+      it 'wraps content with the IE9 fix' do
+        index_of_content = picture_tag(src) { content }.index(content)
+        index_of_ie9_start_tag = picture_tag(src) { content }.index(ie9_start)
+        index_of_ie9_end_tag = picture_tag(src) { content }.index(ie9_end)
+        (index_of_ie9_start_tag < index_of_content).must_equal true
+        (index_of_ie9_end_tag > index_of_content).must_equal true
       end
     end
 

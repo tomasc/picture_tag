@@ -11,7 +11,9 @@ module PictureTag
 
     def picture_tag src, options={}, &block
       content_tag :picture do
+        "<!--[if IE 9]><video style='display: none;'><![endif]-->".html_safe +
         capture(&block) +
+        "<!--[if IE 9]></video><![endif]-->".html_safe +
         image_tag(src, options)
       end
     end
