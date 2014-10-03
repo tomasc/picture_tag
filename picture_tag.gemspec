@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", ">= 3.0"
-  spec.add_dependency "rails-assets-picturefill", ">= 2.0.0"
+  spec.add_dependency "rails-assets-picturefill"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "coveralls"
