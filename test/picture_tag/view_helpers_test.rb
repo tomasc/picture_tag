@@ -37,8 +37,8 @@ module PictureTag
         picture_tag(src, image: image_options) { content }.must_match Regexp.new("#{content}.*<img.*?/></picture>")
       end
 
-      it 'passes src to the image tag' do
-        picture_tag(src) { content }.must_match Regexp.new("<img.*?src=\".*?#{src}.*?\".*?/>")
+      it 'passes src to the image tag srcset' do
+        picture_tag(src) { content }.must_match Regexp.new("<img.*?srcset=\".*?#{src}.*?\".*?/>")
       end
 
       it 'passes image options to the image tag' do

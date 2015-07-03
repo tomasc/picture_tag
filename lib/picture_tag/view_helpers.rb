@@ -10,14 +10,15 @@ module PictureTag
     end
 
     def picture_tag src, options={}, &block
-      image_options = options.fetch(:image, {})
       picture_options = options.except(:image)
+      image_options = options.fetch(:image, {})
+      image_options[:srcset] = src
 
       content_tag :picture, picture_options do
         "<!--[if IE 9]><video style='display: none;'><![endif]-->".html_safe +
         capture(&block) +
         "<!--[if IE 9]></video><![endif]-->".html_safe +
-        image_tag(src, image_options)
+        tag("img", image_options)
       end
     end
 
