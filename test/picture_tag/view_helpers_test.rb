@@ -19,29 +19,30 @@ module PictureTag
 
     describe '#picture_tag' do
       let(:src) { 'src' }
-      let(:alt) { 'alt' }
+      let(:alt) { 'alt text' }
+      let(:image_options) { { alt: alt } }
       let(:content) { 'content' }
       let(:ie9_start) { "<!--[if IE 9]><video style='display: none;'><![endif]-->" }
       let(:ie9_end) { "<!--[if IE 9]></video><![endif]-->" }
 
       it 'returns picture tag' do
-        picture_tag(src, alt: alt) { content }.must_match Regexp.new("\\A<picture>.*?</picture>\\z")
+        picture_tag(src, image: image_options) { content }.must_match Regexp.new("\\A<picture>.*?</picture>\\z")
       end
 
       it 'wraps content in the picture tag' do
-        picture_tag(src, alt: alt) { content }.must_match Regexp.new("<picture>.*#{content}.*</picture>")
+        picture_tag(src, image: image_options) { content }.must_match Regexp.new("<picture>.*#{content}.*</picture>")
       end
 
       it 'adds image tag after the content' do
-        picture_tag(src, alt: alt) { content }.must_match Regexp.new("#{content}.*<img.*?/></picture>")
+        picture_tag(src, image: image_options) { content }.must_match Regexp.new("#{content}.*<img.*?/></picture>")
       end
 
       it 'passes src to the image tag' do
         picture_tag(src) { content }.must_match Regexp.new("<img.*?src=\".*?#{src}.*?\".*?/>")
       end
 
-      it 'passes options to the image tag' do
-        picture_tag(src, alt: alt) { content }.must_match Regexp.new("<img.*?alt=\"#{alt}\".*?/>")
+      it 'passes image options to the image tag' do
+        picture_tag(src, image: image_options) { content }.must_match Regexp.new("<img.*?alt=\"#{alt}\".*?/>")
       end
 
       it 'wraps content with the IE9 fix' do

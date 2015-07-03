@@ -25,7 +25,7 @@ To make it work you need to add this to your `application.js`:
 ## Usage
 
 ```Slim
-= picture_tag '/images/fallback.jpg', alt: 'Your smart alt attribute' do
+= picture_tag '/images/fallback.jpg', image: { alt: 'Your smart alt attribute' } do
   = source_tag srcset: '/images/extralarge.jpg', media: '(min-width: 1000px)', sizes: '100vw'
   = source_tag srcset: '/images/large.jpg', media: '(min-width: 800px)', sizes: '100vw'
   = source_tag srcset: '/images/medium.jpg', sizes: '100vw'
