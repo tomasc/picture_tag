@@ -6,7 +6,7 @@ Rails helper for `<picture>` tag integrated with [Picturefill](http://scottjehl.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this to your application's Gemfile:
 
 ```ruby
     gem 'picture_tag'
