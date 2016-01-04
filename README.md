@@ -8,7 +8,12 @@ Rails helper for `<picture>` tag integrated with [Picturefill](http://scottjehl.
 
 Add this line to your application's Gemfile:
 
+```ruby
     gem 'picture_tag'
+    source 'https://rails-assets.org' do
+        gem 'rails-assets-picturefill'
+    end
+```
 
 And then execute:
 
