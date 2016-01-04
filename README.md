@@ -17,15 +17,21 @@ Add this to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
+```sh
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install picture_tag
+```sh
+$ gem install picture_tag
+```
 
 To make it work you need to add this to your `application.js`:
 
-    //= require picture_tag
+```JS
+//= require picture_tag
+```
 
 ## Usage
 
