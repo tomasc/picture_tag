@@ -1,6 +1,7 @@
 language: ruby
 cache: bundler
 script: 'bundle exec rake'
+sudo: false
 rvm:
   - 1.9.3
 
