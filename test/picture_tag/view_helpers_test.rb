@@ -11,7 +11,7 @@ module PictureTag
 
     describe '#source_tag' do
       it 'returns source tag' do
-        source_tag.must_match Regexp.new("<source.*?\/>")
+        source_tag.must_match Regexp.new('<source.*?/>')
       end
     end
 
@@ -24,10 +24,10 @@ module PictureTag
       let(:image_options) { { alt: alt, src: src } }
       let(:content) { 'content' }
       let(:ie9_start) { "<!--[if IE 9]><video style='display: none;'><![endif]-->" }
-      let(:ie9_end) { "<!--[if IE 9]></video><![endif]-->" }
+      let(:ie9_end) { '<!--[if IE 9]></video><![endif]-->' }
 
       it 'returns picture tag' do
-        picture_tag(srcset, image: image_options) { content }.must_match Regexp.new("\\A<picture>.*?</picture>\\z")
+        picture_tag(srcset, image: image_options) { content }.must_match Regexp.new('\\A<picture>.*?</picture>\\z')
       end
 
       it 'wraps content in the picture tag' do
@@ -58,6 +58,5 @@ module PictureTag
         (index_of_ie9_end_tag > index_of_content).must_equal true
       end
     end
-
   end
 end

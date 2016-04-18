@@ -8,7 +8,7 @@ require 'minitest/spec'
 require 'picture_tag'
 require 'rubygems'
 
-if ENV["CI"]
-  require "coveralls"
+if ENV['CI']
+  require 'coveralls'
   Coveralls.wear!
 end
