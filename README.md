@@ -9,10 +9,7 @@ Rails helper for `<picture>` tag integrated with [Picturefill](http://scottjehl.
 Add this to your application's Gemfile:
 
 ```ruby
-    gem 'picture_tag'
-    source 'https://rails-assets.org' do
-        gem 'rails-assets-picturefill'
-    end
+  gem 'picture_tag'
 ```
 
 And then execute:
@@ -27,7 +24,15 @@ Or install it yourself as:
 $ gem install picture_tag
 ```
 
-To make it work you need to add this to your `application.js`:
+In case you would like to add a picture polyfill:
+
+```ruby
+  source 'https://rails-assets.org' do
+    gem 'rails-assets-picturefill'
+  end
+```
+
+And add to your `application.js`:
 
 ```JS
 //= require picture_tag
